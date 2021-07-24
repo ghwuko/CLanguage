@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-#include <stdio.h>
+//#include <stdio.h>
 
 // 定义一个结构体类型
 // struct -- 结构体关键字  Stu -- 结构体标签  struct Stu -- 结构体类型
@@ -441,3 +441,108 @@
 //	printf("价格：%d元", pb->price);
 //	return 0;
 //}
+
+//int main()
+//{
+//	int hour = 0;
+//	int mi = 0;
+//	int sum = 0;
+//	printf("请输入小时，分钟");
+//	scanf("%d %d", &hour, &mi);
+//	while (mi)
+//	{
+//		sum += hour * 60 + mi;
+//		printf("请输入小时，分钟");
+//		scanf("%d %d", &hour, &mi);
+//	}
+//
+//	printf("hour = %d,mi = %d\n", sum/60, sum%60);
+//	return 0;
+//}
+
+
+
+
+//int main()
+//{
+//	int i = 0;
+//	int arr[10] = { 0 };
+//	for (i = 0; i <= 12; i++)
+//	{
+//		arr[i] = 0;
+//		printf("hehe\n");
+//	}
+//	//system("pause");
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	for (i = 0; i < 100; i++)
+//	{
+//		printf("%d ", i);
+//	}
+//
+//	for (i = 0; i < 100; i++)
+//	{
+//		printf("%d ", 10-i);
+//	}
+//	return 0;
+//}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		arr[i] = i;
+//	}
+//	return 0;
+//}
+
+
+//void test2()
+//{
+//	printf("hehe\n");
+//}
+//void test1()
+//{
+//	test2();
+//}
+//void test()
+//{
+//	test1();
+//}
+//int main()
+//{
+//	test();
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	int i = 0;
+//	int sum = 0;  // 保存最终结果
+//	int n = 0;
+//	int ret = 1; // 保存 n 的阶乘
+//	scanf("%d", &n);
+//	for (i = 1; i <= n; i++)
+//	{
+//		int j = 0;
+//		for (j = 1; j <= i; j++)
+//		{
+//			ret *= j;
+//		}
+//		sum += ret;
+//	}
+//	printf("%d\n", sum);
+//	return 0;
+//}
+
