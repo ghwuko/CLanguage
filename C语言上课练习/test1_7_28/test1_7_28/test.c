@@ -327,11 +327,212 @@
 //}
 
 
+//int main()
+//{
+//    int a[5][5];
+//    int(*p)[4];
+//    p = a;
+//    printf("%p,%d\n", &p[4][2] - &a[4][2], &p[4][2] - &a[4][2]);
+//    return 0;
+//}
+
+//int main()
+//{
+//    int aa[2][5] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//    int* ptr1 = (int*)(&aa + 1);
+//    int* ptr2 = (int*)(*(aa + 1));
+//    printf("%d,%d", *(ptr1 - 1), *(ptr2 - 1));
+//    return 0;
+//}
+
+////#include <stdio.h>
+//int main()
+//{
+//    char* a[] = { "work","at","alibaba" };
+//    char** pa = a;
+//    pa++;
+//    printf("%s\n", *pa);
+//    return 0;
+//}
+
+//int main()
+//{
+//	char* c[] = { "ENTER","NEW","POINT","FIRST" };
+//	char** cp[] = { c + 3,c + 2,c + 1,c };
+//	char*** cpp = cp;
+//	printf("%s\n", **++cpp);  // POINT
+//	printf("%s\n", *-- * ++cpp + 3);
+//	printf("%s\n", *cpp[-2] + 3);
+//	printf("%s\n", cpp[-1][-1] + 1);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	int a = 0;
+//	int n = 0;
+//	int sum = 0;
+//	int ret = 0;
+//	printf("请输入 a 和 n 的值：>");
+//	scanf("%d%d", &a, &n);
+//	for (i = 0; i < n; i++)
+//	{
+//		ret = ret * 10 + a;
+//		sum += ret;
+//
+//
+//	}
+//	printf("结果是:%d", sum);
+//	return 0;
+//}//2 3
+//     sum   a
+// 1    2    22   
+// 2    24   
+// 3
+
+//#include <math.h>
+//int main()
+//{
+//	int i = 0;
+//	for (i = 0; i < 100000; i++)
+//	{
+//		// 判断 i 是否为水仙花数（自幂数）
+//		// 1、 计算 i 的位数
+//		int n = 0;
+//		int tmp = i;
+//		int sum = 0;
+//		while (tmp)
+//		{
+//			tmp /= 10;
+//			n++;
+//		}
+//		// 2、 计算 i 的每一位的  n 次方之和 sum 
+//		tmp = i;
+//		while (tmp)
+//		{
+//			sum += pow(tmp % 10, n);
+//			tmp /= 10;
+//		}
+//		// 3、 比较 i
+//		if (sum == i)
+//		{
+//			printf("%d ", i);
+//		}
+//	}
+//}
+
+//int main()
+//{
+//	int line = 7;
+//	scanf("%d", &line);
+//	// 打印上半部分
+//	int i = 0;
+//	int j = 0;
+//	for (i = 0; i < line; i++)
+//	{
+//		// 打印空格
+//		for (j = 0; j <line-1-i ; j++)
+//		{
+//			printf(" ");
+//		}
+//	    // 打印星号
+//		for (j = 0; j < i*2+1; j++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	// 打印下半部分
+//	for (i = 0; i < line-1; i++)
+//	{
+//		// 打印空格
+//		for (j = 0; j <= i; j++)
+//		{
+//			printf(" ");
+//		}
+//		// 打印星号
+//		for (j = 0; j < 2*(line-i-1)-1; j++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int money = 0;
+//	int total = 0;
+//	int empty = 0;
+//	printf("输入你的钱数:>");
+//	scanf("%d", &money);
+//	// 方法二
+//	if (money <= 0)
+//	{
+//		total = 0;
+//	}
+//	else if (money == 1)
+//	{
+//		total = 1;
+//	}
+//	else
+//	{
+//		total = money * 2 - 1;
+//	}
+//	// 方法一
+//	//total = money;
+//	//empty = total;
+//	//while (empty>1)
+//	//{
+//	//	total += empty / 2;       // 30  35  37  38  39
+//	//	empty = empty / 2 + empty % 2;// 10  5   3   2
+//	//}
+//	printf("可以喝%d 瓶汽水\n", total);
+//	return 0;
+//}
+
+void move(int arr[],int sz)
+{
+	int left = 0;
+	int right = sz-1;
+	while (left < right)
+	{
+		// 从左边找偶数
+		while ((left < right)&&(arr[left] % 2 == 1))
+		{
+			left++;
+		}
+		// 从右边找偶数
+		while ((left < right) && (arr[right] % 2 == 0))
+		{
+			right--;
+		}
+		if (left < right)
+		{
+			int tmp = arr[left];
+			arr[left] = arr[right];
+			arr[right] = tmp;
+		}
+	}
+}
+void print(int arr[], int sz)
+{
+	int i = 0;
+	for (i = 0; i < sz; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+}
 int main()
 {
-    int a[5][5];
-    int(*p)[4];
-    p = a;
-    printf("%p,%d\n", &p[4][2] - &a[4][2], &p[4][2] - &a[4][2]);
-    return 0;
+	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	print(arr, sz);
+	move(arr,sz);
+	print(arr, sz);
+	return 0;
 }
