@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
-
-//int max(int a, int b)
+//#include <stdio.h>
+//int Max(int a, int b)
 //{
 //	return a > b ? a : b;
 //}
@@ -11,7 +11,7 @@
 //	int b = 0;
 //	printf("请输入两个整数:>");
 //	scanf("%d%d", &a, &b);
-//	printf("%d 和 %d 中的较大值为：%d", a, b, max(a, b));
+//	printf("%d 和 %d 中的较大值为：%d", a, b, Max(a, b));
 //	return 0;
 //}
 
@@ -135,13 +135,10 @@
 //int main()
 //{
 //	int i = 0;
-//	for (i = 3; i < 100; i++)
+//	for (i = 3; i < 100; i += 3)
 //	{
-//		if (i % 3 == 0)
-//		{
-//			printf("%d ", i);
-//		}
-//		
+//		printf("%d ", i);
+//
 //	}
 //	return 0;
 //}
@@ -224,7 +221,7 @@
 //	}
 //	return 0;
 //}
-
+//
 //#include <stdio.h>
 //int main()
 //{
@@ -261,7 +258,7 @@
 //	printf("%lf", sum);
 //	return 0;
 //}
-//
+
 
 
 //#include <stdio.h>
@@ -315,35 +312,131 @@
 //#include <stdio.h>
 //int main()
 //{
-//	int arr[] = { 1,2,3,4,5,6,7,8,9 };
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
 //	int k = 1;
 //	int sz = sizeof(arr) / sizeof(arr[0]);
 //	int left = 0;
 //	int right = sz;
-//	int mid = (left + right) / 2;
+//	int mid = 0;
 //	while (left <= right)
 //	{
+//		mid = (left + right) / 2;
 //		if (arr[mid] < k)
 //		{
 //			left = mid + 1;
 //		}
-//		if (arr[mid] > k)
+//		else if (arr[mid] > k)
 //		{
 //			right = mid - 1;
 //		}
-//		if (arr[mid] == k)
+//		else
 //		{
+//			printf("找到了,下标为:%d\n", mid);
 //			break;
 //		}
-//		mid = (left + right) / 2;
+//
 //	}
-//	if (left <= right)
+//	if (left > right)
 //	{
-//		printf("找到了,下标为:%d\n", mid);
-//	}
-//	else
-//	{
-//		printf("找不到\n");
+//		printf("找不到!\n");
 //	}
 //	return 0;
 //}
+
+
+//struct stu
+//{
+//    int num;
+//    char name[10];
+//    int age;
+//};
+//
+//
+//void fun(struct stu* p)
+//{
+//    printf(“ % s\n”, (*p).name);
+//    return;
+//}
+//
+//
+//int main()
+//{
+//    struct stu students[3] = { {9801,”zhang”,20},
+//                              {9802,”wang”,19},
+//                              {9803,”zhao”,18}
+//    };
+//    fun(students + 1);
+//    return 0;
+//}
+
+//#include <stdio.h>
+//#include <string.h>
+//void str_reverse(char arr[])
+//{
+//    int left = 0;
+//    int right = strlen(arr) - 1;
+//    char tmp = arr[right];
+//    arr[right] = '\0';
+//    if ((strlen(arr) > 2)
+//        str_reverse(arr + 1);
+//
+//
+//}
+//int main()
+//{
+//    char arr[100] = { 0 };
+//        scanf("%s", arr);
+//        str_reverse(arr);
+//        return 0;
+//}
+
+//#include <stdio.h>
+//int main()
+//{
+//	int i = 0;
+//	int m = 0;
+//	int n = 0;
+//	for (i = 0; i < 7; i++)
+//	{
+//		for (m = 0; m < 7 - i - 1; m++)
+//		{
+//			printf(" ");
+//		}
+//		for (n = 0; n < i * 2 + 1; n++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//
+//	for (i = 0; i < 6; i++)
+//	{
+//		for (m = 0; m <= i; m++)
+//		{
+//			printf(" ");
+//		}
+//		for (n = 0; n <= (6 - i - 1) * 2; n++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+//#include <stdio.h>
+//int main()
+//{
+//	int money = 20;
+//	int empty = money;
+//	int count = empty;
+//
+//	while (empty >= 2)
+//	{
+//		count += empty / 2;
+//		empty = empty / 2 + empty % 2;
+//	}
+//	printf("%d 元可以喝%d 瓶汽水。", money, count);
+//	return 0;
+//}
+// 20 10 5 2 1 1
